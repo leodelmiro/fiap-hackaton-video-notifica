@@ -12,10 +12,8 @@ describe("Lambda Function", () => {
       sendMail: sinon.stub().resolves({ messageId: "12345" }),
     };
 
-    // Stub do Nodemailer
     createTransportStub = sinon.stub(nodemailer, "createTransport").returns(transporterStub);
 
-    // Stub do Axios
     sinon.stub(axios, "get").resolves({ data: { email: "user@example.com" } });
   });
 
