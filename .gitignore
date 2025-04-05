@@ -5,6 +5,11 @@
 ### Linux ###
 *~
 
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
 
@@ -206,3 +211,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/osx,node,linux,windows,sam
+
+.terraform
+.terraform.*
