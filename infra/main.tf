@@ -24,7 +24,7 @@ resource "aws_lambda_function" "lambda_base" {
   role             = data.aws_iam_role.LabRole.arn
   handler          = "app.lambdaHandler"
   memory_size      = 128
-  timeout          = 100
+  timeout          = 30
   source_code_hash = data.archive_file.lambda.output_base64sha256
   runtime          = var.runtime
 
