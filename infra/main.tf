@@ -31,10 +31,4 @@ resource "aws_lambda_function" "lambda_base" {
   depends_on = [
     data.archive_file.lambda
   ]
-
-  environment {
-    variables = {
-      ALB_EKS = data.aws_lb.nodegroupLb.dns_name
-    }
-  }
 }
