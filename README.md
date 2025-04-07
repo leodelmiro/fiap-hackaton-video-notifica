@@ -45,7 +45,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 - Docker
 - Git
-- JDK 21 ou superior
+- Node JS
 
 ### 2. Clonar o Repositório
 
