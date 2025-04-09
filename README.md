@@ -7,7 +7,6 @@
 * [Tecnologias Utilizadas](#Tecnologias-Utilizadas)
 * [Estrutura do Projeto](#Estrutura-do-Projeto)
 * [Rodando o Projeto Local](#Rodando-o-Projeto-Local)
-* [Sonar Coverage](#Sonar-Coverage)
 
 ## Breve Descrição
 
