@@ -19,7 +19,7 @@ function createTransporter() {
   });
 }
 
-export const handler = async (event) => {
+export const lambdaHandler = async (event) => {
   try {
     for (const record of event.Records) {
       const body = JSON.parse(record.body);
