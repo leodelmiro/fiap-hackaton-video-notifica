@@ -50,7 +50,7 @@ export function getEmailContent(status, name, url) {
   if (status === "ERRO") {
     return {
       subject: "🚨 Problema no processamento",
-      content: `Ocorreu um erro ao processar o vídeo **${name}**. Nossa equipe foi notificada e está analisando o problema.`
+      content: `Ocorreu um erro ao processar o vídeo **${name}**. Verifique o tipo de arquivo e tente novamente.`
     };
   } else if (status === "PROCESSADO") {
     return {
