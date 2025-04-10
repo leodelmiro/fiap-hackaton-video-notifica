@@ -13,7 +13,7 @@
 Aplicação se trata de um Projeto Fiap Tech Challenge (Hackathon) - Software Architecture, simulando um projeto de uma
 empresa que recebe videos e transforma em Imagens.
 
-Este repositório é referente a lambda de notificação de envio processado com erro ou sucesso.
+Este repositório é referente a lambda de notificação por email de envio processado com erro ou sucesso.
 
 ### Demais repositórios
 - https://github.com/leodelmiro/fiap-hackaton-video-usuario
