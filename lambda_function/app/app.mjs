@@ -5,7 +5,7 @@ const SMTP_SERVER = process.env.SMTP_SERVER || "sandbox.smtp.mailtrap.io";
 const SMTP_PORT = process.env.SMTP_PORT || 2525;
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
-const API_URL = process.env.API_URL;
+const USUARIOS_API_URL = process.env.USUARIOS_API_URL;
 
 function createTransporter() {
   return nodemailer.createTransport({
@@ -19,11 +19,11 @@ function createTransporter() {
   });
 }
 
-export const handler = async (event) => {
+export const lambdaHandler = async (event) => {
   try {
     for (const record of event.Records) {
       const body = JSON.parse(record.body);
-      const username = body.username;
+      const username = body.autor;
       const status = body.status;
       const videoName = body.nome || "Arquivo desconhecido";
       const url = body.url || "";
@@ -50,7 +50,7 @@ export function getEmailContent(status, name, url) {
   if (status === "ERRO") {
     return {
       subject: "🚨 Problema no processamento",
-      content: `Ocorreu um erro ao processar o vídeo **${name}**. Nossa equipe foi notificada e está analisando o problema.`
+      content: `Ocorreu um erro ao processar o vídeo **${name}**. Verifique o tipo de arquivo e tente novamente.`
     };
   } else if (status === "PROCESSADO") {
     return {
@@ -60,14 +60,14 @@ export function getEmailContent(status, name, url) {
   } else {
     return {
       subject: "🔔 Status desconhecido",
-      content: `Recebemos uma atualização com status: **${status}**.`
+      content: `Recebemos uma atualização ao processar o vídeo **${name}** com status: **${status}**.`
     };
   }
 }
 
 export async function getEmailFromApi(username) {
   try {
-    const url = `${API_URL}/api/v1/usuarios/${username}`;
+    const url = `${USUARIOS_API_URL}/api/v1/usuarios/${username}`;
     const response = await axios.get(url);
     return response.data.email;
   } catch (error) {
