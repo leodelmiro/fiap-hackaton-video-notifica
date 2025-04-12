@@ -42,7 +42,6 @@ Este repositório é referente a lambda de notificação por email de envio proc
 
 Certifique-se de ter as seguintes ferramentas instaladas:
 
-- Docker
 - Git
 - Node JS
 
