@@ -28,6 +28,7 @@ Este repositório é referente a lambda de notificação por email de envio proc
 
 - Terraform
 - AWS
+- Script SQL
 - NodeJS (Lambda)
 
 ## Estrutura do Projeto
